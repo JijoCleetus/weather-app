@@ -9,7 +9,8 @@ export interface WeatherData{
   weatherTitle:string;
   weatherSubTitle:string;
   icon:string;
-  windSpeed:string;
+  windSpeed:number;
+  temperature?:number
 }
 
 export interface WeatherResponse {

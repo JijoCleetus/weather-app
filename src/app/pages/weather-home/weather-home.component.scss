@@ -1,0 +1,61 @@
+.city-selector{
+    margin:100px 0px 30px;
+}
+.weather-card-wrapper{
+    display: flex;
+    justify-content: center;
+    ::ng-deep{
+        .mat-card-footer {
+            margin: 0 -16px 2px -16px;
+        }
+        .mat-card{
+            min-height: 250px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    }
+}
+
+.prediction-box{
+    ::ng-deep{
+        .mat-card{
+            width:550px;
+        }    
+    } 
+}
+
+@media (min-width: 320px) and (max-width:425px){
+    .city-selector {
+        margin: 20px 0px 0px;
+        ::ng-deep{
+            .mat-form-field{
+                width: 90%;
+            }
+            .mat-card-actions{
+                margin-bottom: 0px !important;
+            }
+            .mat-card-content{
+                margin-bottom: 0px !important;
+            }
+        }
+    }
+    .weather-card-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        ::ng-deep{
+            .mat-expansion-panel-header{
+                font-size: 14px;
+            }
+            .mat-card-footer {
+                margin: 0 -16px 2px -16px;
+            }
+        }
+    }
+    .prediction-box{
+        ::ng-deep{
+            .mat-card{
+                width:auto;
+            }    
+        } 
+    }
+}

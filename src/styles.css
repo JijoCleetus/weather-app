@@ -9,3 +9,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-form-field-appearance-fill  {
     background-color: rgb(66 7 7 / 0%) !important;
 }
+.mat-card{
+    margin: 10px;
+}

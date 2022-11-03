@@ -7,16 +7,18 @@ import { UtilityService } from 'src/app/shared/utilities/utils';
 import { Router } from '@angular/router';
 import { mockCities } from 'src/app/shared/data/cities.mock';
 import { WeatherEngineService } from './weather-engine.service';
+import { List, MasterWeather } from 'src/app/shared/models/weather.interface';
 
 @Component({
   selector: 'app-weather-home',
   templateUrl: './weather-home.component.html',
-  styleUrls: ['./weather-home.component.css'],
+  styleUrls: ['./weather-home.component.scss'],
 })
 export class WeatherHomeComponent implements OnInit {
   cities: City[] = mockCities;
   selectedCity: City = this.dataService.value;
-  currentWeatherData: any;
+  currentWeatherData: List = {} as List;
+  predictionData: MasterWeather = {} as MasterWeather;
 
   constructor(
     private dataService: DataService,
@@ -35,13 +37,14 @@ export class WeatherHomeComponent implements OnInit {
   }
 
   fetchWeather() {
-    console.log(this.selectedCity);
+    
     this.apiService.getWeatherData(this.selectedCity).subscribe({
       next: (res) => {
+        this.predictionData={}  as MasterWeather;
         console.log(res);
         this.currentWeatherData = res.list[0];
         this.selectedCity = res.city;
-        this.weatherEngine.prepareWeather(res);
+        this.predictionData = this.weatherEngine.prepareWeather(res);
       },
       error: (err) => {
         console.log(err);
@@ -51,8 +54,8 @@ export class WeatherHomeComponent implements OnInit {
   }
 
   setCity(value: City) {
-    this.dataService.value = this.selectedCity = value as City;
-
+    this.selectedCity = value;
+    // this.dataService.value = this.selectedCity = value as City;
     this.fetchWeather();
   }
 }

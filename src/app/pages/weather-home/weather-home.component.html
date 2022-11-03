@@ -12,6 +12,9 @@
     [weatherData]="currentWeatherData"
     [city]="selectedCity"
   ></app-current-weather>
-
-  <app-weather-prediction></app-weather-prediction>
+  <div class="prediction-box">
+    <app-weather-prediction
+      [weatherData]="predictionData.weatherFeed"
+    ></app-weather-prediction>
+  </div>
 </div>
