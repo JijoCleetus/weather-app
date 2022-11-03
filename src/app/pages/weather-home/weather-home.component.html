@@ -1,53 +1,17 @@
 <div class="city-selector">
   <app-city-selector
-    title="Try another City" 
     [cities]="cities"
     [value]="selectedCity.name"
     [isActionNeeded]="false"
     (citySelector)="setCity($event)"
   ></app-city-selector>
 </div>
+
 <div class="weather-card-wrapper">
-  <mat-card class="example-card">
-    <mat-card-subtitle>{{ now }}</mat-card-subtitle>
-    <mat-card-title
-      >{{ selectedCity.name }}, {{ selectedCity.country }}</mat-card-title
-    >
-    <mat-card-title>{{ temperature }}&#8451;</mat-card-title>
-    <mat-card-subtitle
-      ><p>{{ longText }}</p></mat-card-subtitle
-    >
-    <app-weather-icon
-      *ngIf="isDataAvailable"
-      [iconUrl]="weatherIconUrl"
-    ></app-weather-icon>
-    <div>{{ weatherDescription | titlecase }}</div>
-    <mat-card-content>
-      <p>Wind Speed : {{ windSpeed }} m/s</p>
-    </mat-card-content>
-    <mat-divider inset></mat-divider>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-    <mat-card-footer> </mat-card-footer>
-  </mat-card>
+  <app-current-weather
+    [weatherData]="currentWeatherData"
+    [city]="selectedCity"
+  ></app-current-weather>
 
-  <mat-card class="example-card">
-    <mat-card-subtitle>5-Day Forecast</mat-card-subtitle>
-
-    <mat-accordion class="example-headers-align" multi>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title> Personal data </mat-panel-title>
-          <mat-panel-description>
-            Type your name and age
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-
-        Content inside accordian
-      </mat-expansion-panel>
-    </mat-accordion>
-    <mat-card-footer> </mat-card-footer>
-  </mat-card>
+  <app-weather-prediction></app-weather-prediction>
 </div>

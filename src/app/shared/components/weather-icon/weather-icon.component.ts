@@ -11,6 +11,6 @@ export class WeatherIconComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.iconUrl);
+    console.log("iconcomponent",this.iconUrl);
   }
 }

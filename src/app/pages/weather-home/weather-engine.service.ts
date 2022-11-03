@@ -10,7 +10,6 @@ import {
 })
 export class WeatherEngineService {
   private weatherData: MasterWeather[] = {} as MasterWeather[];
-  private today: number = new Date().getDate();
 
   constructor() {}
 
@@ -25,4 +24,5 @@ export class WeatherEngineService {
   prepareWeather(data: WeatherResponse): void {
     
   }
+  
 }
