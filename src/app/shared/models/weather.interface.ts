@@ -1,5 +1,17 @@
 import { City } from './city.interface';
 
+export interface MasterWeather{
+  weatherFeed:WeatherData[];
+}
+
+export interface WeatherData{
+  date:string;
+  weatherTitle:string;
+  weatherSubTitle:string;
+  icon:string;
+  windSpeed:string;
+}
+
 export interface WeatherResponse {
   city: City;
   cnt: number;
@@ -17,7 +29,7 @@ export interface List {
   rain: Rain;
   sys: Sys;
   visibility: number;
-  weather: Weather;
+  weather: Weather[];
   wind: Wind;
 }
 

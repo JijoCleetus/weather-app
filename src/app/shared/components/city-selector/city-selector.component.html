@@ -1,0 +1,18 @@
+<form [formGroup]="cityForm" (ngSubmit)="onSubmit()" novalidate>
+    <mat-card-content class="card-custom-content">
+      <h3>{{title}}</h3>
+      <mat-form-field appearance="fill" class="inner-form">
+        <mat-label>City</mat-label>
+        <mat-select formControlName="city" (selectionChange)="onChange($event)">
+          <mat-option *ngFor="let city of cities" [value]="city.name">{{
+            city.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="card-custom-content">
+      <button *ngIf="isActionNeeded" class="wa-button-primary" mat-button color="primary">
+        Get Weather
+      </button>
+    </mat-card-actions>
+  </form>

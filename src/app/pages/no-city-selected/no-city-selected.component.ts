@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-no-city-selected',
   templateUrl: './no-city-selected.component.html',
-  styleUrls: ['./no-city-selected.component.css'],
+  styleUrls: ['./no-city-selected.component.scss'],
 })
 export class NoCitySelectedComponent implements OnInit {
   cities: City[] = mockCities;
@@ -26,12 +26,12 @@ export class NoCitySelectedComponent implements OnInit {
     private apiService: ApiService,
     private formBuilder: FormBuilder,
     private dataService: DataService,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
 
-  onSubmit():void {
+  onSubmit(): void {
     let city = this.cityForm.value.city as string;
     if (this.cityForm.valid) {
       this.apiService.getCityDetails(city).subscribe({
@@ -51,5 +51,10 @@ export class NoCitySelectedComponent implements OnInit {
         complete: () => console.info('complete'),
       });
     }
+  }
+
+  setCity(value: City) {
+    this.dataService.value = value as City;
+    this.router.navigate(['weather']);
   }
 }

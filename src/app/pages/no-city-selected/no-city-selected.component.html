@@ -1,31 +1,16 @@
-<!-- <div class="no-city-card"> -->
 <mat-card class="example-card no-city-card">
   <mat-card-header> </mat-card-header>
   <div class="image-container">
     <img
       mat-card-image
       src="assets/images/app-logo.png"
-      alt="Photo of a Shiba Inu"
+      alt="Get Weather Logo"
     />
   </div>
-  <form [formGroup]="cityForm" (ngSubmit)="onSubmit()" novalidate>
-    <mat-card-content class="card-custom-content">
-      <h3>Please select a City to get Weather</h3>
-      <mat-form-field appearance="fill">
-        <mat-label>City</mat-label>
-        <mat-select formControlName="city">
-          <mat-option *ngFor="let city of cities" [value]="city.name">{{
-            city.name
-          }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions class="card-custom-content">
-      <button class="wa-button-primary" mat-button color="primary">
-        Get Weather
-      </button>
-    </mat-card-actions>
-  </form>
+  <app-city-selector
+    title="Please select a City to get Weather" 
+    [cities]="cities"
+    [isActionNeeded]="true"
+    (citySelector)="setCity($event)"
+  ></app-city-selector>
 </mat-card>
-
-<!-- </div> -->

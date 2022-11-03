@@ -1,0 +1,8 @@
+.city-selector{
+    margin:100px 30px 30px;
+}
+.weather-card-wrapper{
+    display: flex;
+    justify-content: center;
+
+}
