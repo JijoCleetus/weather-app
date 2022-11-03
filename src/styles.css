@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.wa-button-primary{
+    background-color: #28a6fa;
+    color: #FFF !important;
+}
+.mat-form-field-appearance-fill  {
+    background-color: rgb(66 7 7 / 0%) !important;
+}
