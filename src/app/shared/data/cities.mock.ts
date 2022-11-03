@@ -13,4 +13,8 @@ export const mockCities: City[] = [
     name: 'Cardiff',
     id: 3,
   },
+  {
+    name: 'Manchester',
+    id: 4,
+  },
 ];

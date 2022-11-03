@@ -1,22 +1,19 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from 'src/app/material.module';
 import { ApiService } from 'src/app/shared/services/api.service';
-import { WeatherHomeComponent } from './weather-home.component';
+import { WeatherComponent } from './weather.component';
 
 const weatherRoutes: Routes = [
-    { path: '', component: WeatherHomeComponent },
-  ];
+  { path: '', component: WeatherComponent },
+];
 
 @NgModule({
-  declarations: [WeatherHomeComponent],
-  imports: [
-    RouterModule.forChild(weatherRoutes),
-    MaterialModule,
-    ReactiveFormsModule,
-],
+  declarations: [WeatherComponent],
+  imports: [ MaterialModule,ReactiveFormsModule,RouterModule.forChild(weatherRoutes),],
   providers: [ApiService],
-  exports: [MaterialModule,RouterModule],
+  exports: [MaterialModule],
 })
-export class WeatherHomeModule {}
+export class WeatherModule {}
