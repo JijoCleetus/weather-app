@@ -4,8 +4,8 @@
     >{{ city.name }}, {{ city.country }}</mat-card-title
   >
   <mat-card-title>{{ temperature }}&#8451;</mat-card-title>
-  <mat-card-subtitle
-    ><p>{{ weatherDescription | titlecase }}</p></mat-card-subtitle
+  <h3
+    >{{ weatherDescription | titlecase }}</h3
   >
   <app-weather-icon
     *ngIf="isDataAvailable"

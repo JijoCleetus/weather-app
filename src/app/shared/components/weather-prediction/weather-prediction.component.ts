@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { APP_CONST } from '../../constants/app.constants';
 import { List, MasterWeather, WeatherData } from '../../models/weather.interface';
 
 @Component({
@@ -9,6 +10,8 @@ import { List, MasterWeather, WeatherData } from '../../models/weather.interface
 export class WeatherPredictionComponent implements OnInit, OnChanges {
   @Input() weatherData: WeatherData[] = [] as WeatherData[];
   isDataLoaded: boolean = false;
+
+  APP_CONST=APP_CONST;
 
   constructor() {}
 

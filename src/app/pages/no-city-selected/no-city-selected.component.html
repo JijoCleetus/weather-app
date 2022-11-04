@@ -8,7 +8,7 @@
     />
   </div>
   <app-city-selector
-    title="Please select a City to get Weather" 
+    [title]="APP_CONST.PLEASE_SELECT_A_CITY" 
     [cities]="cities"
     [isActionNeeded]="true"
     (citySelector)="setCity($event)"

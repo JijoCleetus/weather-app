@@ -10,6 +10,7 @@ import {
 } from '@angular/forms';
 import { DataService } from 'src/app/shared/services/data.service';
 import { Router } from '@angular/router';
+import { APP_CONST } from 'src/app/shared/constants/app.constants';
 
 @Component({
   selector: 'app-no-city-selected',
@@ -21,6 +22,7 @@ export class NoCitySelectedComponent implements OnInit {
   cityForm = this.formBuilder.group({
     city: ['', Validators.required],
   });
+  APP_CONST = APP_CONST;
 
   constructor(
     private apiService: ApiService,
