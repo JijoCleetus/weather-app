@@ -29,7 +29,6 @@ export class CitySelectorComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.isActionNeeded);
     if (this.value != '') {
       this.cityForm.patchValue({ city: this.value });
     }

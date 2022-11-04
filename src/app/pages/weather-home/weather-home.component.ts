@@ -41,7 +41,6 @@ export class WeatherHomeComponent implements OnInit {
     this.apiService.getWeatherData(this.selectedCity).subscribe({
       next: (res) => {
         this.predictionData={}  as MasterWeather;
-        console.log(res);
         this.currentWeatherData = res.list[0];
         this.selectedCity = res.city;
         this.predictionData = this.weatherEngine.prepareWeather(res);

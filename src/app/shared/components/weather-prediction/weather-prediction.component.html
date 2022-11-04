@@ -5,8 +5,10 @@
     <mat-expansion-panel *ngFor="let data of weatherData">
       <mat-expansion-panel-header>
         <mat-panel-title> {{ data?.date }} </mat-panel-title>
-        <mat-panel-description>{{
+        <mat-panel-description class="desc">{{
           data?.weatherTitle | titlecase
+        }}, {{
+          data?.weatherSubTitle | titlecase
         }}</mat-panel-description>
       </mat-expansion-panel-header>
       <div class="example-card">
@@ -16,7 +18,7 @@
           [iconUrl]="data.icon"
         ></app-weather-icon>
         <div>
-          <p>Wind Speed : {{ data?.windSpeed }} m/s</p>
+          <p class="wind-speed">Wind Speed : {{ data?.windSpeed }} m/s</p>
         </div>
       </div>
     </mat-expansion-panel>

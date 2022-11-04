@@ -3,9 +3,9 @@
   <mat-card-title
     >{{ city.name }}, {{ city.country }}</mat-card-title
   >
-  <mat-card-title>{{ temperature }}&#8451;</mat-card-title>
+  <mat-card-title class="temperature">{{ temperature }}&#8451;</mat-card-title>
   <h3
-    >{{ weatherDescription | titlecase }}</h3
+    >{{ weatherMain | titlecase }}, {{ weatherDescription | titlecase }}</h3
   >
   <app-weather-icon
     *ngIf="isDataAvailable"
@@ -13,7 +13,7 @@
   ></app-weather-icon>
   <!-- <div>{{ weatherDescription | titlecase }}</div> -->
   <mat-card-content>
-    <p>Wind Speed : {{ windSpeed }} m/s</p>
+    <p class="wind-speed">Wind Speed : {{ windSpeed }} m/s</p>
   </mat-card-content>
   <!-- <mat-divider inset></mat-divider> -->
   <mat-card-footer> </mat-card-footer>

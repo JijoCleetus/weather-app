@@ -15,7 +15,7 @@ import { UtilityService } from 'src/app/shared/utilities/utils';
 export class WeatherEngineService {
   private weatherData: MasterWeather = {} as MasterWeather;
   private today: number = new Date().getDate();
-  iconUrl: string = 'http://openweathermap.org/img/w/';
+  iconUrl: string = 'http://openweathermap.org/img/wn/';
   d1: WeatherData[] = [];
   d2: WeatherData[] = [];
   d3: WeatherData[] = [];
@@ -66,7 +66,7 @@ export class WeatherEngineService {
     let date = new Date(data.dt_txt).getDate();
     let formatedData: WeatherData = {
       date: moment(data.dt_txt).format('MMM DD, h:mm A'),
-      weatherTitle: data.weather[0].description,
+      weatherTitle: data.weather[0].main,
       weatherSubTitle: data.weather[0].description,
       icon: this.getWeatherIconUrl(data.weather[0].icon),
       windSpeed: data.wind.speed,
@@ -94,6 +94,6 @@ export class WeatherEngineService {
   }
 
   getWeatherIconUrl(icon: string): string {
-    return `${this.iconUrl}${icon}.png`;
+    return `${this.iconUrl}${icon}@4x.png`;
   }
 }

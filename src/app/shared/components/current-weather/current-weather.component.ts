@@ -17,9 +17,10 @@ export class CurrentWeatherComponent implements OnInit, OnChanges {
   longText = `Mostly cloudy for the hour.`;
   isDataAvailable: boolean = false;
   temperature: number = 0 as number;
-  iconUrl: string = 'http://openweathermap.org/img/w/';
+  iconUrl: string = 'http://openweathermap.org/img/wn/';
   weatherIconUrl: string = '';
   weatherDescription: string = '';
+  weatherMain: string = '';
   windSpeed: number = 0;
 
   constructor(
@@ -43,11 +44,12 @@ export class CurrentWeatherComponent implements OnInit, OnChanges {
       this.utils.convertKelvinToCelsius(this.weatherData.main.feels_like)
     );
     this.weatherDescription = this.weatherData.weather[0].description;
+    this.weatherMain = this.weatherData.weather[0].main;
     this.windSpeed = this.weatherData.wind.speed;
     this.weatherIconUrl = this.getWeatherIconUrl();
   }
 
   getWeatherIconUrl(): string {
-    return `${this.iconUrl}${this.weatherData.weather[0].icon}.png`;
+    return `${this.iconUrl}${this.weatherData.weather[0].icon}@2x.png`;
   }
 }
